@@ -1,11 +1,14 @@
 <h1>My Diary Entries</h1>
 
+My diary has <%= Entry.public_count %> entries and counting
 <%= link_to "Write new entry", new_entry_path %>
 
 <ul>
   <% @entries.each do |entry| %>
-  <li>
-    <strong><%= link_to entry.title, entry %></strong> <%= entry.body %>
-  </li>
+    <% unless entry.archived? %>
+      <li>
+        <strong><%= link_to entry.title, entry %></strong> <%= entry.body %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
