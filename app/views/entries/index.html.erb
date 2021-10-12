@@ -1,6 +1,6 @@
 <h1>My Diary Entries</h1>
 
-<a href="/entries/new">Create new entry</a>
+<%= link_to "Write new entry", new_entry_path %>
 
 <ul>
   <% @entries.each do |entry| %>
