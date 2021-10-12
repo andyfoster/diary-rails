@@ -2,7 +2,7 @@
 
 <p><%= @entry.body %></p>
 
-<a href="/entries">Home</a>
+<%= link_to "Home", root_path %>
 <ul>
   <li><%= link_to "Edit", edit_entry_path(@entry) %></li>
 </ul>
