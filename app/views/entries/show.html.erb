@@ -9,3 +9,26 @@
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
 </ul>
+
+<h2>Comments</h2>
+<% @entry.comments.each do |comment| %>
+  <p>
+    <strong><%= comment.commenter %>:</strong><br />
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_with model: [ @entry, @entry.comments.build ] do |form| %>
+  <p>
+    <%= form.label :commenter, "Your Name" %><br />
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body, "Your Comment" %><br />
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
