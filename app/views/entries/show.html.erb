@@ -5,4 +5,7 @@
 <%= link_to "Home", root_path %>
 <ul>
   <li><%= link_to "Edit", edit_entry_path(@entry) %></li>
+  <li><%= link_to "Delete", entry_path(@entry),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
 </ul>
