@@ -3,7 +3,7 @@
 <ul>
   <% @entries.each do |entry| %>
   <li>
-    <a href="<%= entry_path(entry) %>"><strong><%= entry.title %></strong></a> <%= entry.body %>
+    <strong><%= link_to entry.title, entry %></strong> <%= entry.body %>
   </li>
   <% end %>
 </ul>
