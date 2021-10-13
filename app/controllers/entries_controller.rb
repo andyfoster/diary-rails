@@ -1,4 +1,8 @@
 class EntriesController < ApplicationController
+
+  http_basic_authenticate_with name: 'andy', password: 'pass', 
+    except: [:index, :show]
+
   def index
     @entries = Entry.all
   end
