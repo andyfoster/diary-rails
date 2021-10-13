@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if current_user %>
+      <h5>You are signed in as <%= current_user.email %></h5>
+    <% end %>
     <%= yield %>
   </body>
 </html>
